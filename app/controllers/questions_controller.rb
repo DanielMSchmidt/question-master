@@ -80,4 +80,14 @@ class QuestionsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def rate
+    @question = Question.find(params[:id])
+    @question.difficulty = params[:difficulty].to_i
+    @question.save!
+
+    respond_to do |format|
+      format.js
+    end
+  end
 end

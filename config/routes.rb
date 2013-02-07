@@ -1,6 +1,6 @@
 QuestionMaster::Application.routes.draw do
   match "test/take/:subject/:size" => 'test#take', as: :test
-
+  match "questions/:id/rate/:difficulty" => 'questions#rate', as: :rate
   resources :subjects
 
 
