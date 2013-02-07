@@ -15,10 +15,10 @@ ActiveRecord::Schema.define(:version => 20130207095727) do
 
   create_table "questions", :force => true do |t|
     t.text     "content"
-    t.integer  "count"
+    t.integer  "count",      :default => 0
     t.integer  "subject_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   create_table "subjects", :force => true do |t|
