@@ -14,6 +14,7 @@
       %td= link_to 'Test!', test_path(size: 20, subject: subject.id)
       %td= link_to 'Show', subject
       %td= link_to 'Edit', edit_subject_path(subject)
+      %td= link_to 'Add Questions', new_question_path(subject: subject)
       %td= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
