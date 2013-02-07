@@ -1,0 +1,5 @@
+==Question Master
+
+This app takes your questions and subject and generates tests for you.
+
+v0.1 Basic behavior, almost no UI
