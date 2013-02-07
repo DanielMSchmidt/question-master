@@ -1,4 +1,10 @@
 QuestionMaster::Application.routes.draw do
+  resources :subjects
+
+
+  resources :questions
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
