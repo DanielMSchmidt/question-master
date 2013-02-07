@@ -11,7 +11,7 @@
   - @subjects.each do |subject|
     %tr
       %td= subject.name
-      %td= link_to 'Test!', test_path(size: 20, subject: subject.id)
+      %td= link_to 'Test!', test_path(size: 10, subject: subject.id)
       %td= link_to 'Show', subject
       %td= link_to 'Edit', edit_subject_path(subject)
       %td= link_to 'Add Questions', new_question_path(subject: subject)

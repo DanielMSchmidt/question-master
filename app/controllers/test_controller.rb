@@ -1,7 +1,7 @@
 class TestController < ApplicationController
   def take
     @subject = Subject.find(params[:subject])
-    size = params[:size].to_i || 20
+    size = params[:size].to_i || 10
     questions = @subject.questions
 
     if questions.count <= size
