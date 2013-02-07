@@ -4,7 +4,7 @@ class TestController < ApplicationController
     size = params[:size].to_i || 10
     questions = @subject.questions
 
-    if questions.count <= size
+    if questions.count > size
       @asked_questions = questions.shuffle.sort_by{|x| x.count}.shift(size)
     else
       @asked_questions = questions
