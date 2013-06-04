@@ -3,8 +3,12 @@
 %ol
   - @asked_questions.each do |x|
     %li{class: "question-#{x.id}"}
-      = x.content
-      =link_to 'Easy', rate_path(id: x.id, difficulty: 4), remote: true
-      =link_to 'Medium', rate_path(id: x.id, difficulty: 3), remote: true
-      =link_to 'Hard', rate_path(id: x.id, difficulty: 2), remote: true
-      =link_to 'WTF!', rate_path(id: x.id, difficulty: 1), remote: true
+      #question
+        = x.content
+        =link_to 'Easy', rate_path(id: x.id, difficulty: 4), remote: true
+        =link_to 'Medium', rate_path(id: x.id, difficulty: 3), remote: true
+        =link_to 'Hard', rate_path(id: x.id, difficulty: 2), remote: true
+        =link_to 'WTF!', rate_path(id: x.id, difficulty: 1), remote: true
+
+      #answer.hidden
+        =x.tex_answer

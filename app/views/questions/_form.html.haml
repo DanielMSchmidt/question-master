@@ -8,7 +8,12 @@
 
   .field
     = f.label :content
-    = f.text_field :content
+    = f.text_area :content
+
+  .field
+    = f.label :answer
+    = f.text_area :answer
+
     = f.hidden_field :subject_id
   .actions
     = f.submit 'Save'

@@ -1,2 +1,5 @@
-<%= raw("alert('Updated Question \##{@question.id} successfully');") %>
-<%= raw("$('ol li.question-#{@question.id}').hide('slow')") %>
+var element = <%= raw("$('ol li.question-#{@question.id}')")%>;
+console.log("updated:" + element);
+$(element).find("#question").hide(200, function(){
+    $(element).find("#answer").show(200);
+});
