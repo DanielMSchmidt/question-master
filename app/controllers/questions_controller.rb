@@ -90,4 +90,11 @@ class QuestionsController < ApplicationController
       format.js
     end
   end
+  def show_answer
+    @quest_id = params[:id]
+
+    respond_to do |format|
+      format.js
+    end
+  end
 end

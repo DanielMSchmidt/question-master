@@ -1,5 +1,5 @@
 class Question < ActiveRecord::Base
-  attr_accessible :content, :count, :subject_id, :difficulty, :answer
+  attr_accessible :content, :count, :subject_id, :difficulty, :answer, :tex
   belongs_to :subject
 
   def increment

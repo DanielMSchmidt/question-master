@@ -5,10 +5,14 @@
     %li{class: "question-#{x.id}"}
       #question
         = x.content
-        =link_to 'Easy', rate_path(id: x.id, difficulty: 4), remote: true
-        =link_to 'Medium', rate_path(id: x.id, difficulty: 3), remote: true
-        =link_to 'Hard', rate_path(id: x.id, difficulty: 2), remote: true
-        =link_to 'WTF!', rate_path(id: x.id, difficulty: 1), remote: true
+        = link_to 'Easy', rate_path(id: x.id, difficulty: 4), remote: true
+        = link_to 'Medium', rate_path(id: x.id, difficulty: 3), remote: true
+        = link_to 'Hard', rate_path(id: x.id, difficulty: 2), remote: true
+        = link_to 'WTF!', rate_path(id: x.id, difficulty: 1), remote: true
+        = link_to 'Show me!', show_answer_path(id: x.id), remote: true
 
-      #answer.hidden
-        =x.tex_answer
+      %div{:id => "answer-#{x.id}", :class => "hidden"}
+        - if x.tex
+          = x.tex_answer
+        - else
+          = x.answer
