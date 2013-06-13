@@ -1,22 +1,21 @@
-%h1 Listing subjects
 
-%table
-  %tr
-    %th Name
-    %th
-    %th
-    %th
-    %th
 
-  - @subjects.each do |subject|
-    %tr
-      %td= subject.name
-      %td= link_to 'Test!', test_path(size: 10, subject: subject.id)
-      %td= link_to 'Show', subject
-      %td= link_to 'Edit', edit_subject_path(subject)
-      %td= link_to 'Add Questions', new_question_path(subject: subject)
-      %td= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' }
+.row-fluid
+  %h1.span2.offset2 Listing subjects
+  #subjects.span10.offset1.row-fluid
+    - @subjects.each do |subject|
+      .span10.offset1.well
+        %h2= subject.name
+        .btn-group
+          .btn
+            = link_to 'Test!', test_path(size: 10, subject: subject.id)
+          .btn
+            = link_to 'Show', subject
+          .btn
+            = link_to 'Edit', edit_subject_path(subject)
+          .btn
+            = link_to 'Add Questions', new_question_path(subject: subject)
+          .btn
+            = link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' }
 
-%br
-
-= link_to 'New Subject', new_subject_path
+  = link_to 'New Subject', new_subject_path, :class => "btn btn-primary span2 offset2"
