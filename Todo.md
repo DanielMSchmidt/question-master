@@ -1,3 +1,4 @@
-#TODO: 
- Add frontend framework: http://foundation.zurb.com/ 
- Clear Gemfile
+#TODO:
+  - Clear Gemfile
+  - Add hotkeys for saving questions
+  - erkennung von tex durch \
