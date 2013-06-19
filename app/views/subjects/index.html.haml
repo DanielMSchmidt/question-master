@@ -1,5 +1,3 @@
-
-
 .row-fluid
   %h1.span2.offset2 Listing subjects
   #subjects.span10.offset1.row-fluid
@@ -15,7 +13,5 @@
             = link_to 'Edit', edit_subject_path(subject)
           .btn
             = link_to 'Add Questions', new_question_path(subject: subject)
-          .btn
-            = link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' }
 
   = link_to 'New Subject', new_subject_path, :class => "btn btn-primary span2 offset2"

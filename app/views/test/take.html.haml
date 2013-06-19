@@ -10,6 +10,7 @@
         = link_to 'Hard', rate_path(id: x.id, difficulty: 2), remote: true
         = link_to 'WTF!', rate_path(id: x.id, difficulty: 1), remote: true
         = link_to 'Show me!', show_answer_path(id: x.id), remote: true
+        = link_to 'Edit me!', edit_question_path(id: x.id)
 
       %div{:id => "answer-#{x.id}", :class => "hidden"}
         - if x.tex
