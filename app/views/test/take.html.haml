@@ -3,14 +3,17 @@
 %ol
   - @asked_questions.each do |x|
     %li{class: "question-#{x.id}"}
-      #question
-        = x.content
-        = link_to 'Easy', rate_path(id: x.id, difficulty: 4), remote: true
-        = link_to 'Medium', rate_path(id: x.id, difficulty: 3), remote: true
-        = link_to 'Hard', rate_path(id: x.id, difficulty: 2), remote: true
-        = link_to 'WTF!', rate_path(id: x.id, difficulty: 1), remote: true
-        = link_to 'Show me!', show_answer_path(id: x.id), remote: true
-        = link_to 'Edit me!', edit_question_path(id: x.id)
+      #question.row-fluid
+        .span5.offset1
+          = x.content
+        .span3.offset1
+          = link_to 'Easy', rate_path(id: x.id, difficulty: 4), remote: true, :class => "btn btn-primary"
+          = link_to 'Medium', rate_path(id: x.id, difficulty: 3), remote: true, :class => "btn btn-primary"
+          = link_to 'Hard', rate_path(id: x.id, difficulty: 2), remote: true, :class => "btn btn-primary"
+          = link_to 'WTF!', rate_path(id: x.id, difficulty: 1), remote: true, :class => "btn btn-primary"
+        .span1.offset1
+          = link_to 'Show me!', show_answer_path(id: x.id), remote: true, :class => "btn btn-primary"
+          = link_to 'Edit me!', edit_question_path(id: x.id), :class => "btn btn-primary"
 
       %div{:id => "answer-#{x.id}", :class => "hidden"}
         - if x.tex
