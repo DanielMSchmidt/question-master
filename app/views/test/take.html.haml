@@ -1,22 +1,22 @@
 %h1 Test starts now
 
-%ol
+.row-fluid
   - @asked_questions.each do |x|
-    %li{class: "question-#{x.id}"}
-      #question.row-fluid
-        .span5.offset1
+    %div{:class => "span10 offset1 well question-#{x.id}"}
+      .row-fluid
+        .span6
           = x.content
         .span3
           = link_to 'Easy', rate_path(id: x.id, difficulty: 4), remote: true, :class => "btn btn-primary"
           = link_to 'Medium', rate_path(id: x.id, difficulty: 3), remote: true, :class => "btn btn-primary"
           = link_to 'Hard', rate_path(id: x.id, difficulty: 2), remote: true, :class => "btn btn-primary"
           = link_to 'WTF!', rate_path(id: x.id, difficulty: 1), remote: true, :class => "btn btn-primary"
-        .span2
+        .span3
           = link_to 'Show me!', show_answer_path(id: x.id), remote: true, :class => "btn btn-primary"
           = link_to 'Edit me!', edit_question_path(id: x.id), :class => "btn btn-primary"
 
-      %div{:id => "answer-#{x.id}", :class => "hidden"}
-        - if x.tex
-          = x.tex_answer
-        - else
-          = x.answer
+        %div{:id => "answer-#{x.id}", :class => "hidden span12"}
+          - if x.tex
+            = x.tex_answer
+          - else
+            = x.answer
